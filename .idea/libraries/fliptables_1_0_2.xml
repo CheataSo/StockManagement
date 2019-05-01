@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="fliptables-1.0.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../text-table-formatter-1.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../StockManagement/text-table-formatter-1.1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
