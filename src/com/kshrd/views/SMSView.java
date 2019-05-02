@@ -149,6 +149,14 @@ public class SMSView {
                         sa.read();
                         break;
                     case "e":
+                        System.out.println("Do you want to save your work? [Y/y] / [N/y] : ");
+                        String se = sc.next();
+                        if(se.equalsIgnoreCase("y")){
+                            SMSReadWrite.save();
+                        }
+                        else {
+                            System.out.println("Good luck...");
+                        }
                         System.out.println("++++++++++++++ GOOD BYE! ++++++++++++++");
                         System.exit(0);
                         break;

@@ -21,7 +21,6 @@ public class ListProduct {
             Table t = new Table(5, BorderStyle.UNICODE_DOUBLE_BOX,
                     ShownBorders.ALL);
             if (SMSView.products.size() == 0) {
-                    System.out.println("404 not found!!!");
                     System.out.println("No record yet!! please input some record!!");
             } else {
                     t.addCell("ID");
