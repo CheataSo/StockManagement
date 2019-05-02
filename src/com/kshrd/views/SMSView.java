@@ -107,7 +107,7 @@ public class SMSView {
                         page.setRow(rows);
                         break;
                     case "sa":
-
+                        System.out.println("Data Saving...");
                         SMSReadWrite.save();
                         System.out.println("save successful");
                         break;
