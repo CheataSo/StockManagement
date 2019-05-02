@@ -18,9 +18,7 @@ public class Pagination {
     void previouse(){
         ListProduct.page--;
         if(ListProduct.page<1){
-            ListProduct.CurrentPage = SMSView.products.size()-ListProduct.numberOfRow;
-            ListProduct.page = SMSView.products.size()/ListProduct.numberOfRow;
-            lp.display();
+            last();
         }else {
             ListProduct.CurrentPage-=ListProduct.numberOfRow;
             lp.display();
@@ -64,10 +62,9 @@ public class Pagination {
             goTo = sc.next();
         }while (!Validate.isPageValid(goTo));
         int Goto = Integer.parseInt(goTo);
-        ListProduct.CurrentPage = (ListProduct.numberOfRow * Goto)-ListProduct.numberOfRow;
+        ListProduct.CurrentPage = (Pagination.row* Goto)-Pagination.row;
         ListProduct.page = Goto;
         lp.display();
-
     }
     void setRow(String rows) throws IOException {
 

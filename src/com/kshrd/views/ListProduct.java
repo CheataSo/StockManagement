@@ -31,14 +31,16 @@ public class ListProduct {
                     t.setColumnWidth(i,15,15);
                     }
                     for (int i = CurrentPage; i <CurrentPage + numberOfRow; i++) {
+                            if(CurrentPage>SMSView.products.size()){
+                                break;
+                            }else {
 
-
-                                    t.addCell(list.get(i).getId() + "", Style);
-                                    t.addCell(list.get(i).getName() + "",Style);
-                                    t.addCell(list.get(i).getUnitPrice() + "$", Style);
-                                    t.addCell(list.get(i).getQty() + "", Style);
-                                    t.addCell(list.get(i).getImportDate() + "",Style);
-
+                                t.addCell(list.get(i).getId() + "", Style);
+                                t.addCell(list.get(i).getName() + "", Style);
+                                t.addCell(list.get(i).getUnitPrice() + "$", Style);
+                                t.addCell(list.get(i).getQty() + "", Style);
+                                t.addCell(list.get(i).getImportDate() + "", Style);
+                            }
                     }
 
                     if (list.size()%Pagination.row==0){
