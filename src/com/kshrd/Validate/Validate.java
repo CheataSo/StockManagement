@@ -22,6 +22,10 @@ public class Validate {
     public static  boolean isRowValid(String number){
         try {
             int row = Integer.parseInt(number);
+            if(SMSView.products.size()==0){
+                System.out.println("No record yet! Please input some records before set row.");
+                return true;
+            }
             if(row> SMSView.products.size()){
                 System.out.println("Number of row can not be greater than Total Record "+SMSView.products.size());
                 return false;
@@ -30,6 +34,7 @@ public class Validate {
                 System.out.println("Number of row mush > 0 ");
                 return false;
             }
+
         }catch (Exception e){
             System.out.println("Input invalid");
             return false;

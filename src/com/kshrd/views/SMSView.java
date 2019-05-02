@@ -1,5 +1,6 @@
 package com.kshrd.views;
 
+import com.kshrd.Validate.Validate;
 import com.kshrd.models.DAO.SMSAccess;
 import com.kshrd.models.DAO.SMSReadWrite;
 import com.kshrd.models.DTO.Product;
@@ -7,6 +8,7 @@ import org.nocrala.tools.texttablefmt.BorderStyle;
 import org.nocrala.tools.texttablefmt.ShownBorders;
 import org.nocrala.tools.texttablefmt.Table;
 
+import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -19,17 +21,16 @@ public class SMSView {
     public static ArrayList<Product> products = new ArrayList<>();
     public void display() throws IOException {
 
-            Font.group();
-        try {
-            StockFont.Stockfont();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Font.group();
+
+
         Scanner sc = new Scanner(System.in);
             Pagination page = new Pagination();
             System.out.println("Please wait.....");
             SMSReadWrite.readData();
-
+            File path = new File("src\\com\\kshrd\\SMSFile\\SetRow.txt");
+            Scanner sr = new Scanner(path);
+            page.setRow(sr.nextLine());
             Table tm = new Table(10, BorderStyle.CLASSIC_COMPATIBLE_WIDE, ShownBorders.SURROUND_HEADER_AND_COLUMNS);
             for (int i = 0; i <= 9; i++) {
                 tm.setColumnWidth(i, 5, 10);
@@ -98,7 +99,12 @@ public class SMSView {
                         page.goTo();
                         break;
                     case "se":
-                        page.setRow();
+                        String rows;
+                        do {
+                            System.out.print("How many row you want to set ? :");
+                            rows = sc.next();
+                        }while (!Validate.isRowValid(rows));
+                        page.setRow(rows);
                         break;
                     case "sa":
 

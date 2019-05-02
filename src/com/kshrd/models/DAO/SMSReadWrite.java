@@ -24,7 +24,7 @@ public class SMSReadWrite {
 
 
 
-            System.out.println("Loading spend : " + (System.nanoTime()-start)/1000000 + " milliseconds ");
+            System.out.println("Loading spend : " + (System.nanoTime()-start)/1000_000_000 + " sec ");
 
 
             objectInputStream.close();
@@ -33,7 +33,7 @@ public class SMSReadWrite {
 
 
         } catch (FileNotFoundException e) {
-            System.out.println("File not found!!");
+            System.out.println("Empty File!!");
         } catch (IOException e) {
             System.out.println("Empty Data!");
         } catch (ClassNotFoundException e) {
@@ -53,7 +53,7 @@ public class SMSReadWrite {
 
 
 
-            System.out.println("Write : "+(System.nanoTime()-s)/1000000 + " millisecond");
+            System.out.println("Write : "+(System.nanoTime()-s)/1000_000_000 + " millisecond");
 
             objectOutputStream.close();
             bufferedOutputStream.close();

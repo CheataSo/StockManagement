@@ -163,10 +163,13 @@ public class SMSAccess {
 
 
             if (input == 1 || input == 2 || input == 3 || input == 4) {
-                ch=1;
-                System.out.print("Please Enter ID : ");
-                int id;
-                id = scan.nextInt();
+                ch = 1;
+                String Id;
+                do {
+                    System.out.print("Please Enter ID : ");
+                    Id = scan.next();
+                } while (!Validate.isNumber(Id));
+                int id = Integer.parseInt(Id);
                 boolean verify = false;
                 for (Product pro : productList) {
                     if (id == pro.getId()) {
@@ -177,15 +180,15 @@ public class SMSAccess {
                             case 1:
                                 System.out.print("Enter new name : ");
                                 String newName = scan.next();
-                                do{
+                                do {
                                     System.out.print("Enter new price : ");
                                     price = scan.next();
-                                }while (!Validate.isNumber(price));
-                                double newPrice =Double.parseDouble(price);
+                                } while (!Validate.isNumber(price));
+                                double newPrice = Double.parseDouble(price);
                                 do {
                                     System.out.print("Enter new Quantity : ");
                                     qty = scan.next();
-                                }while (!Validate.isNumber(qty));
+                                } while (!Validate.isNumber(qty));
                                 int newQty = Integer.parseInt(qty);
                                 pro.setName(newName);
                                 pro.setUnitPrice(newPrice);
@@ -204,7 +207,7 @@ public class SMSAccess {
                                 do {
                                     System.out.print("Enter new price");
                                     price = scan.next();
-                                }while (!Validate.isNumber(price));
+                                } while (!Validate.isNumber(price));
                                 double newPrice1 = Double.parseDouble(price);
                                 pro.setUnitPrice(newPrice1);
                                 proList.add(pro);
@@ -214,7 +217,7 @@ public class SMSAccess {
                                 do {
                                     System.out.print("Enter new Quantity : ");
                                     qty = scan.next();
-                                }while (!Validate.isNumber(qty));
+                                } while (!Validate.isNumber(qty));
                                 int newQty1 = Integer.parseInt(qty);
                                 pro.setQty(newQty1);
                                 proList.add(pro);

@@ -2,6 +2,8 @@ package com.kshrd.views;
 
 import com.kshrd.Validate.Validate;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 
@@ -71,13 +73,15 @@ public class Pagination {
         lp.display();
 
     }
-    void setRow(){
-        String rows;
-        do {
-            System.out.print("How many row you want to set ? :");
-            rows = sc.next();
-        }while (!Validate.isRowValid(rows));
+    void setRow(String rows) throws IOException {
+
+        FileWriter fw = null;
             row = Integer.parseInt(rows);
+            fw = new FileWriter("src\\com\\kshrd\\SMSFile\\SetRow.txt");
+            fw.write(row+"");
+            fw.close();
+
+
             if(SMSView.products.size()%row==0) {
                 ListProduct.numberOfRow = row;
             }else {
