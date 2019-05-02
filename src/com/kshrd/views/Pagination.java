@@ -6,7 +6,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-
 public class Pagination {
     ListProduct lp = new ListProduct();
     Scanner sc = new Scanner(System.in);
@@ -16,7 +15,6 @@ public class Pagination {
         ListProduct.page = 1;
         lp.display();
     }
-
     void previouse(){
         ListProduct.page--;
         if(ListProduct.page<1){
@@ -28,7 +26,6 @@ public class Pagination {
             lp.display();
         }
     }
-
     void next(){
         try {
             ListProduct.CurrentPage += ListProduct.numberOfRow;
@@ -45,7 +42,6 @@ public class Pagination {
         }
 
     }
-
     void last(){
         if(SMSView.products.size()%ListProduct.numberOfRow==0) {
             ListProduct.CurrentPage = SMSView.products.size()-ListProduct.numberOfRow;
@@ -61,7 +57,7 @@ public class Pagination {
 
         }
     }
-     void goTo(){
+    void goTo(){
         String goTo;
         do {
             System.out.print("Wish page do you want to go : ");
@@ -75,12 +71,12 @@ public class Pagination {
     }
     void setRow(String rows) throws IOException {
 
+
         FileWriter fw = null;
             row = Integer.parseInt(rows);
             fw = new FileWriter("src\\com\\kshrd\\SMSFile\\SetRow.txt");
             fw.write(row+"");
             fw.close();
-
 
             if(SMSView.products.size()%row==0) {
                 ListProduct.numberOfRow = row;

@@ -14,8 +14,7 @@ public class ListProduct {
         public static int page = 1;
         public static int numberOfRow=1;
         public static int totalPage  ;
-
-    public void display() {
+        public void display() {
             ArrayList<Product> list = SMSView.products;
             CellStyle numberStyle = new CellStyle(CellStyle.HorizontalAlign.right);
             Table t = new Table(5, BorderStyle.UNICODE_DOUBLE_BOX,
@@ -29,14 +28,14 @@ public class ListProduct {
                     t.addCell("Quantity", numberStyle);
                     t.addCell("Import Data");
                     for (int i = CurrentPage; i <CurrentPage + numberOfRow; i++) {
-                            if(i>list.size()) break;
-                            else {
+
+
                                     t.addCell(list.get(i).getId() + "", numberStyle);
                                     t.addCell(list.get(i).getName() + "");
                                     t.addCell(list.get(i).getUnitPrice() + "$", numberStyle);
                                     t.addCell(list.get(i).getQty() + "", numberStyle);
                                     t.addCell(list.get(i).getImportDate() + "");
-                            }
+
                     }
 
                     if (list.size()%Pagination.row==0){
@@ -54,7 +53,6 @@ public class ListProduct {
                     System.out.println(tp.render());
             }
     }
-
 }
 
 

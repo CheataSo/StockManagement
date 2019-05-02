@@ -30,7 +30,7 @@ public class SMSView {
             SMSReadWrite.readData();
             File path = new File("src\\com\\kshrd\\SMSFile\\SetRow.txt");
             Scanner sr = new Scanner(path);
-            page.setRow(sr.nextLine());
+            page.setRow( sr.nextLine());
             Table tm = new Table(10, BorderStyle.CLASSIC_COMPATIBLE_WIDE, ShownBorders.SURROUND_HEADER_AND_COLUMNS);
             for (int i = 0; i <= 9; i++) {
                 tm.setColumnWidth(i, 5, 10);
@@ -118,7 +118,9 @@ public class SMSView {
                         break;
                     case "re":
                         SMSReadWrite.backUpRestore(SMSBackUp,SMSdata);
-                        System.out.println("Restore");
+                        System.out.println("Successful Restored data!");
+                        System.out.println("Please restart the program!!!!");
+                        System.out.println();
                         break;
                     case "h":
                         sa.help();
@@ -139,6 +141,7 @@ public class SMSView {
                     case "#addr":
                         System.out.print("Input number of record : ");
                         int num = sc.nextInt();
+                        System.out.println("Inserting...");
                         for (int i=1;i<=num;i++){
                             products.add(new Product(i,"coca",4.5,5,ld.toString()));
                         }

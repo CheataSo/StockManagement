@@ -53,7 +53,7 @@ public class SMSReadWrite {
 
 
 
-            System.out.println("Write : "+(System.nanoTime()-s)/1000_000_000 + " millisecond");
+            System.out.println("Write : "+(System.nanoTime()-s)/1000_000_000 + " sec");
 
             objectOutputStream.close();
             bufferedOutputStream.close();
@@ -101,12 +101,11 @@ public class SMSReadWrite {
 
 
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("File not found!! No data for backup");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
-
 }

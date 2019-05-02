@@ -58,6 +58,4 @@ public class Validate {
         }
         return true;
     }
-
-
 }

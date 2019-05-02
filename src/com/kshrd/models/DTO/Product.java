@@ -55,9 +55,4 @@ public class Product implements Serializable {
         return ImportDate;
     }
 
-    public void setImportDate(String importDate) {
-        ImportDate = importDate;
-    }
-
-
 }

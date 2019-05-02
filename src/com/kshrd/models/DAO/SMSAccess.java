@@ -17,7 +17,7 @@ public class SMSAccess {
      LocalDate ld = LocalDate.now();
      Scanner sc = new Scanner(System.in);
      //Insert Object
-     public void write(){
+        public void write(){
          String pri;
          String qty;
          Table tb = new Table(2, BorderStyle.UNICODE_BOX_DOUBLE_BORDER, ShownBorders.ALL);
@@ -64,7 +64,6 @@ public class SMSAccess {
 
 
      }
-
         public void read(){
             Table tr = new Table(2, BorderStyle.UNICODE_BOX_DOUBLE_BORDER, ShownBorders.ALL);
             String idr;
