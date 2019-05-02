@@ -156,9 +156,13 @@ public class SMSAccess {
         ArrayList<Product> proList = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
         int ch=0;
+        String inputs="";
         do{
-            System.out.print("Input option from 1->4 : ");
-            input= scan.nextInt();
+            do {
+                System.out.print("Input option from 1->4 : ");
+                inputs = scan.next();
+            }while (!Validate.isNumber(inputs));
+            input = Integer.parseInt(inputs);
 
 
             if (input == 1 || input == 2 || input == 3 || input == 4) {
@@ -282,7 +286,7 @@ public class SMSAccess {
         th.addCell(" Press : sa");
         th.addCell(" Save record to the file.");
         th.addCell(" Press : s");
-        th.addCell(" Search record bu name of products.");
+        th.addCell(" Search record by name of products.");
         th.addCell(" Press : se");
         th.addCell(" Set row to display.");
         th.addCell(" Press : ba");

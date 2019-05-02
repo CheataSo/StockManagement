@@ -6,7 +6,7 @@ import com.kshrd.views.SMSView;
 public class Validate {
     public static boolean isNumber(String number){
         try{
-            double num = Integer.valueOf(number);
+            double num = Double.valueOf(number);
             if(num>0){
                 return true;
             } else {

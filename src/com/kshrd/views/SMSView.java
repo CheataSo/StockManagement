@@ -50,7 +50,7 @@ public class SMSView {
             tm.addCell("Sa)ve");
             tm.addCell("Ba)ck Up");
             tm.addCell("Re)store");
-            tm.addCell("He)lp");
+            tm.addCell("H)elp");
             tm.addCell("E)xit");
 
             String SMSdata = "src\\com\\kshrd\\SMSFile\\SMSdata.txt";
@@ -60,8 +60,7 @@ public class SMSView {
                 System.out.println("                                      --Menu--");
                 System.out.println(tm.render());
                 System.out.print("Command --> ");
-                String cmd = sc.next();
-
+                String cmd = sc.next().toLowerCase();
                 switch (cmd) {
                     case "*":
                         System.out.println("                 --List Product--");

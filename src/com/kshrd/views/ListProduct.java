@@ -16,25 +16,28 @@ public class ListProduct {
         public static int totalPage  ;
         public void display() {
             ArrayList<Product> list = SMSView.products;
-            CellStyle numberStyle = new CellStyle(CellStyle.HorizontalAlign.right);
+            CellStyle Style = new CellStyle(CellStyle.HorizontalAlign.center);
             Table t = new Table(5, BorderStyle.UNICODE_DOUBLE_BOX,
                     ShownBorders.ALL);
             if (SMSView.products.size() == 0) {
                     System.out.println("No record yet!! please input some record!!");
             } else {
-                    t.addCell("ID");
-                    t.addCell("Name");
-                    t.addCell("Unit Price", numberStyle);
-                    t.addCell("Quantity", numberStyle);
+                    t.addCell("ID", Style);
+                    t.addCell("Name", Style);
+                    t.addCell("Unit Price", Style);
+                    t.addCell("Quantity", Style);
                     t.addCell("Import Data");
+                    for (int i=0;i<5;i++){
+                    t.setColumnWidth(i,15,15);
+                    }
                     for (int i = CurrentPage; i <CurrentPage + numberOfRow; i++) {
 
 
-                                    t.addCell(list.get(i).getId() + "", numberStyle);
-                                    t.addCell(list.get(i).getName() + "");
-                                    t.addCell(list.get(i).getUnitPrice() + "$", numberStyle);
-                                    t.addCell(list.get(i).getQty() + "", numberStyle);
-                                    t.addCell(list.get(i).getImportDate() + "");
+                                    t.addCell(list.get(i).getId() + "", Style);
+                                    t.addCell(list.get(i).getName() + "",Style);
+                                    t.addCell(list.get(i).getUnitPrice() + "$", Style);
+                                    t.addCell(list.get(i).getQty() + "", Style);
+                                    t.addCell(list.get(i).getImportDate() + "",Style);
 
                     }
 
@@ -46,7 +49,7 @@ public class ListProduct {
                     }
                     Table tp = new Table(2, BorderStyle.DESIGN_CURTAIN_HEAVY,
                             ShownBorders.SURROUND);
-                    tp.setColumnWidth(0, 25, 30);
+                    tp.setColumnWidth(0, 60, 60);
                     tp.addCell("Page : " + page + " of " + totalPage);
                     tp.addCell("Total Record : " + list.size());
                     System.out.println(t.render());
